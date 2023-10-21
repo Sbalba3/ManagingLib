@@ -1,3 +1,6 @@
+using ManagingLib.DAL.Context;
+using Microsoft.EntityFrameworkCore;
+
 namespace ManagingLib
 {
     public class Program
@@ -8,6 +11,11 @@ namespace ManagingLib
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<ManagingContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("cs"));
+
+            });
 
             var app = builder.Build();
 
