@@ -38,6 +38,8 @@ namespace ManagingLib
 
                 });
             builder.Services.AddAutoMapper(M => M.AddProfile(new AuthorProfile()));
+            builder.Services.AddAutoMapper(M => M.AddProfile(new BookProfile()));
+            builder.Services.AddAutoMapper(M => M.AddProfile(new GenreProfile()));
 
 
             var app = builder.Build();

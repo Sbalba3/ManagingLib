@@ -1,0 +1,35 @@
+﻿@model BookViewModel
+@{
+    var authors = new SelectList(ViewBag.Authors, "Id", "Name");
+    var genres = new SelectList(ViewBag.Genres, "Id", "Name");
+
+}
+
+<div>
+    <label>Title</label>
+    <input asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title"></span>
+</div>
+<div>
+    <label>ISBN Number</label>
+    <input asp-for="ISBN" class="form-control" />
+    <span asp-validation-for="ISBN"></span>
+</div>
+<div>
+    <label>Publication Year</label>
+    <input asp-for="PublicationYear" class="form-control" />
+    <span asp-validation-for="PublicationYear"></span>
+</div>
+<div>
+    <label class="col-form-label">Author</label>
+    <select class="form-control" asp-for="AuthorId" asp-items="authors">
+        <option value="0">---Select Author---</option>
+    </select>
+</div>
+<div>
+    <label class="col-form-label">Genre</label>
+    <select class="form-control" asp-for="GenreId" asp-items="genres">
+        <option value="0">---Select Genre---</option>
+    </select>
+</div>
+
