@@ -6,7 +6,7 @@ using MangaingLib.BLL.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Managinglibrary.Controllers
+namespace ManagingLib.Controllers
 {
     public class AccountController : Controller
     {

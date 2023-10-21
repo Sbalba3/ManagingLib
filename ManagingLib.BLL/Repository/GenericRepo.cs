@@ -50,6 +50,10 @@ namespace MangaingLib.BLL.Repository
         {
             await _managingContext.SaveChangesAsync();
         }
+        public async Task<IEnumerable<T>> GetByGenreIdAsync(int id)
+        {
+            return (IEnumerable<T>)await _managingContext.Books.Include(x => x.Author).Where(x => x.GenreId == id).ToListAsync();
+        }
         public void Dispose()
          => _managingContext.Dispose();
     }
