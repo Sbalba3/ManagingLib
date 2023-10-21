@@ -1,5 +1,6 @@
 using ManagingLib.DAL.Context;
 using ManagingLib.DAL.Models;
+using Managinglibrary.Mapping_Profiles;
 using MangaingLib.BLL.Interfaces;
 using MangaingLib.BLL.Repository;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -36,6 +37,8 @@ namespace ManagingLib
                     Option.AccessDeniedPath = "Home/Error";
 
                 });
+            builder.Services.AddAutoMapper(M => M.AddProfile(new AuthorProfile()));
+
 
             var app = builder.Build();
 
