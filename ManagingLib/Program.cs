@@ -40,6 +40,8 @@ namespace ManagingLib
             builder.Services.AddAutoMapper(M => M.AddProfile(new AuthorProfile()));
             builder.Services.AddAutoMapper(M => M.AddProfile(new BookProfile()));
             builder.Services.AddAutoMapper(M => M.AddProfile(new GenreProfile()));
+            builder.Services.AddAutoMapper(M => M.AddProfile(new UserProfile()));
+            builder.Services.AddAutoMapper(M => M.AddProfile(new RoleProfile()));
 
 
             var app = builder.Build();
