@@ -1,0 +1,23 @@
+﻿@model GenreViewModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1> Are you sure you want Delete this Genre</h1>
+
+<form asp-action="Delete">
+    <div asp-validation-summary="All"></div>
+
+    <div>
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" readonly />
+    </div>
+    <div>
+        <label>Description</label>
+        <input asp-for="Description" class="form-control" readonly />
+    </div>
+  
+    <br />
+    <input type="submit" value="Delete" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-primary">Cancle</a>
+</form>

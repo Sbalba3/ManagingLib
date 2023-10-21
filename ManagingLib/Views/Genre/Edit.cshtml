@@ -1,0 +1,23 @@
+﻿@model GenreViewModel
+@{
+    ViewData["Title"] = "Edit";
+    
+}
+
+<h1>Edit</h1>
+
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <div asp-validation-summary="All"></div>
+
+    <partial name="PartialNiews\_CreatEditGenrePartialView" />
+    <br />
+    <input type="submit" value="Save" class="btn btn-success" />
+    <a asp-action="Index" class="btn btn-primary">Back To List</a>
+</form>
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+}
