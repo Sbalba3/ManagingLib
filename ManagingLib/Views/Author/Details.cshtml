@@ -1,0 +1,26 @@
+﻿@model AuthorViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<form asp-action="Details">
+    <div asp-validation-summary="All"></div>
+
+    <div>
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" readonly />
+    </div>
+    <div>
+        <label>Birth Date</label>
+        <input asp-for="BirthDate" class="form-control" readonly />
+    </div>
+    <div>
+        <label>Nationality</label>
+        <input asp-for="Nationality" class="form-control" readonly />
+    </div>
+    <br />
+    <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@Model.Id">Edit</a>
+    <a asp-action="Index" class="btn btn-primary">Back To List</a>
+</form>
+

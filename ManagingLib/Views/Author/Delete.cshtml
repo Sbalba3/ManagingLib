@@ -1,0 +1,26 @@
+﻿@model AuthorViewModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1> Are you sure you want Delete this Author</h1>
+
+<form asp-action="Delete">
+    <div asp-validation-summary="All"></div>
+
+    <div>
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" readonly />
+    </div>
+    <div>
+        <label>Birth Date</label>
+        <input asp-for="BirthDate" class="form-control" readonly />
+    </div>
+    <div>
+        <label>Nationality</label>
+        <input asp-for="Nationality" class="form-control" readonly />
+    </div>
+    <br />
+    <input type="submit" value="Delete" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-primary">Cancle</a>
+</form>

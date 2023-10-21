@@ -1,0 +1,57 @@
+﻿@model IEnumerable<AuthorViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Authors</h1>
+
+<div>
+    <a asp-action="Create" class="btn btn-primary">Add Author</a>
+</div>
+<br />
+
+<div class="card shadow mb-4 text-center">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="" id="myTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th class="text text-center">Name</th>
+                        <th class="text text-center">BirthDate</th>
+                        <th class="text text-center">Nationality</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.BirthDate</td>
+                            <td>@item.Nationality</td>
+                            <td><a asp-controller="Author" asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning"><i class="fas fa-eye"></i></a></td>
+                            <td><a asp-controller="Author" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success"><i class="fas fa-edit"></i></a></td>
+                            <td><a asp-controller="Author" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/lib/datatables/datatables.js"></script>
+    <script src="~/lib/datatables/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable(
+
+
+
+            );
+        });
+    </script>
+}
