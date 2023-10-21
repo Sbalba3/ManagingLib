@@ -1,4 +1,9 @@
 using ManagingLib.DAL.Context;
+using ManagingLib.DAL.Models;
+using MangaingLib.BLL.Interfaces;
+using MangaingLib.BLL.Repository;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace ManagingLib
@@ -16,6 +21,21 @@ namespace ManagingLib
                 options.UseSqlServer(builder.Configuration.GetConnectionString("cs"));
 
             });
+            builder.Services.AddScoped(typeof(IGenericRepo<>), typeof(GenericRepo<>));
+
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>(Option => {
+                Option.Password.RequireNonAlphanumeric = true;
+                Option.Password.RequireLowercase = true;
+                Option.Password.RequireUppercase = true;
+                Option.Password.RequireDigit = true;
+            }).AddEntityFrameworkStores<ManagingContext>().AddDefaultTokenProviders();
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(Option =>
+                {
+                    Option.LoginPath = "Account/Login";
+                    Option.AccessDeniedPath = "Home/Error";
+
+                });
 
             var app = builder.Build();
 
