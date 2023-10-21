@@ -11,6 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagingLib.BLL", "Managing
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagingLib.Tests", "ManagingLib.Tests\ManagingLib.Tests.csproj", "{4E4035D4-FAB7-496D-B48F-9340F1476564}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{6AE4BD4E-5ED3-40C3-AC19-AD42DFB6052F}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documentation.docx = ..\Documentation.docx
+		..\Erd.png = ..\Erd.png
+		..\ManagingLib,bak = ..\ManagingLib,bak
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
