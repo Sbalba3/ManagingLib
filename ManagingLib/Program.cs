@@ -1,6 +1,6 @@
 using ManagingLib.DAL.Context;
 using ManagingLib.DAL.Models;
-using Managinglibrary.Mapping_Profiles;
+using ManagingLib.Mapping_Profiles;
 using MangaingLib.BLL.Interfaces;
 using MangaingLib.BLL.Repository;
 using Microsoft.AspNetCore.Authentication.Cookies;

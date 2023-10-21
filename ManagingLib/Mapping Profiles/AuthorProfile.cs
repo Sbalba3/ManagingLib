@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Managing.DAL.Models;
-using Managinglibrary.ViewModels;
+using ManagingLib.DAL.Models;
+using ManagingLib.ViewModels;
 
-namespace Managinglibrary.Mapping_Profiles
+namespace ManagingLib.Mapping_Profiles
 {
     public class AuthorProfile: Profile
     {
