@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<GenreViewModel>
 @{
     ViewData["Title"] = "Index";
+    var genres = new SelectList(ViewBag.Genres, "Id", "Name");
 }
 
 <h1>Index</h1>

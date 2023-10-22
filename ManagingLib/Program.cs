@@ -1,6 +1,7 @@
 using ManagingLib.DAL.Context;
 using ManagingLib.DAL.Models;
 using ManagingLib.Mapping_Profiles;
+using ManagingLib.Middlewares;
 using MangaingLib.BLL.Interfaces;
 using MangaingLib.BLL.Repository;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -45,6 +46,7 @@ namespace ManagingLib
 
 
             var app = builder.Build();
+            app.UseMiddleware<ExceptionMiddlware>();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
